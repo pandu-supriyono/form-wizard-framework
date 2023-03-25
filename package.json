@@ -1,0 +1,22 @@
+{
+  "name": "wizards-framework",
+  "private": true,
+  "description": "A toolkit to be used in combination with hmpo-form-wizard to create accessible forms",
+  "author": "Pandu Supriyono <mail@supriyono.nl>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pandu-supriyono/wizards-framework.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "changeset": "changeset",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "turbo": "^1.8.5"
+  }
+}
