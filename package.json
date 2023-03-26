@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "changeset": "changeset",
+    "lint": "turbo lint",
     "test": "turbo test",
     "test:watch": "turbo test:watch"
   },

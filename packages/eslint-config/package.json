@@ -5,7 +5,8 @@
   "author": "Pandu Supriyono <mail@supriyono.nl>",
   "scripts": {
     "test": "jest test --coverage",
-    "test:watch": "jest test --watchAll --coverage"
+    "test:watch": "jest test --watchAll --coverage",
+    "lint": "eslint ."
   },
   "license": "MIT",
   "devDependencies": {
