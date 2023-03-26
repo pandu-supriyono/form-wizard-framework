@@ -1,11 +1,11 @@
 {
-  "name": "wizards-framework",
+  "name": "form-wizard-framework",
   "private": true,
   "description": "A toolkit to be used in combination with hmpo-form-wizard to create accessible forms",
   "author": "Pandu Supriyono <mail@supriyono.nl>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pandu-supriyono/wizards-framework.git"
+    "url": "https://github.com/pandu-supriyono/form-wizard-framework.git"
   },
   "workspaces": [
     "packages/*"
