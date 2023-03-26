@@ -1,5 +1,5 @@
 {
-  "name": "@wizards-framework/eslint-config",
+  "name": "@form-wizard-framework/eslint-config",
   "version": "0.0.0",
   "main": "index.js",
   "author": "Pandu Supriyono <mail@supriyono.nl>",
