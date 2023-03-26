@@ -14,7 +14,8 @@
     "changeset": "changeset",
     "lint": "turbo lint",
     "test": "turbo test",
-    "test:watch": "turbo test:watch"
+    "test:watch": "turbo test:watch",
+    "publish-packages": "turbo run lint test && changeset version && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
