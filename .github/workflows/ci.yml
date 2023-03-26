@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  unit tests:
+  unit-tests:
     runs-on: ubuntu-22.04
 
     strategy:
