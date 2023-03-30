@@ -245,6 +245,10 @@ describe('mixin', () => {
         foo: 'bar',
       };
 
+      const expectedContext = Object.assign(options.emailer.context, {
+        subject: options.emailer.subject,
+      });
+
       nunjucksEnv.render.mockImplementation((template, context, cb) => {
         cb(null, html);
       });
@@ -253,7 +257,7 @@ describe('mixin', () => {
 
       expect(nunjucksEnv.render).toHaveBeenCalledWith(
         options.emailer.template,
-        options.emailer.context,
+        expectedContext,
         expect.any(Function)
       );
     });
