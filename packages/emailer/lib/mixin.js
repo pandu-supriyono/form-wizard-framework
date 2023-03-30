@@ -81,7 +81,12 @@ module.exports = (Controller) => {
         );
       }
 
-      return Object.assign(locals, req.sessionModel.toJSON(), config.context);
+      return Object.assign(
+        locals,
+        req.sessionModel.toJSON(),
+        { subject },
+        config.context
+      );
     }
 
     _getAttachments(req) {
