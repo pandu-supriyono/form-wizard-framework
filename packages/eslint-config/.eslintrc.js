@@ -19,7 +19,7 @@ module.exports = {
       env: {
         jest: true,
       },
-      files: ['**/*.spec.js'],
+      files: ['**/*.spec.js', '**/*.jest.js'],
       plugins: ['jest'],
       extends: ['plugin:jest/recommended'],
     },
