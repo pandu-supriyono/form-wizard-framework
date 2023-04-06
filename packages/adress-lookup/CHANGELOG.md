@@ -1,7 +1,7 @@
 # @form-wizard-framework/address-lookup
 
-## 1.0.1
+## 1.0.0
 
-### Patch Changes
+### Major Changes
 
 - fd5c04d: add support for Postcode API
