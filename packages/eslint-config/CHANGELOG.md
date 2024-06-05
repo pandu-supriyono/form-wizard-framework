@@ -1,5 +1,11 @@
 # @form-wizard-framework/eslint-config
 
+## 2.0.0
+
+### Major Changes
+
+- 522d652: Update the Node env to ES2018
+
 ## 1.0.0
 
 ### Major Changes
