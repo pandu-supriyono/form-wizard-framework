@@ -16,7 +16,7 @@ In many cases, fields have a fixed content key, meaning they always display the 
   }
 ```
 
-As a functional content key
+## As a functional content key
 
 ```
   {
@@ -26,7 +26,7 @@ As a functional content key
   }
 ```
 
-As conditionals
+## As conditionals
 
 ```
   {
