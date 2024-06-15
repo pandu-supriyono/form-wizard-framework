@@ -1,6 +1,6 @@
 {
   "name": "@form-wizard-framework/dynamic-content-key",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "index.js",
   "author": "Pandu Supriyono <mail@supriyono.nl>",
   "scripts": {
