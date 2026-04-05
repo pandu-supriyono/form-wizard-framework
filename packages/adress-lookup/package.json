@@ -9,16 +9,19 @@
     "lint": "eslint ."
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "devDependencies": {
     "@form-wizard-framework/eslint-config": "^2.0.0",
     "eslint": "^8.36.0",
-    "hmpo-model": "^4.3.0",
+    "hmpo-model": "^7.0.1",
     "jest": "^29.5.0",
     "nock": "^13.3.0"
   },
   "dependencies": {
     "async": "^3.2.4",
     "debug": "^4.3.4",
-    "underscore": "^1.13.6"
+    "underscore": "^1.13.8"
   }
 }

@@ -1,22 +1,15 @@
-const nodemailerSmtpTransport = require('nodemailer-smtp-transport');
 const smtp = require('../../../lib/transports/smtp');
 
-jest.mock('nodemailer-smtp-transport');
-
 describe('transports/smtp', () => {
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
-
-  it('should return a nodemailer transport', () => {
+  it('should return a nodemailer SMTP config object', () => {
     const options = {
       host: 'my.smtp.host',
       port: 25,
     };
 
-    smtp(options);
+    const result = smtp(options);
 
-    expect(nodemailerSmtpTransport).toHaveBeenCalledWith({
+    expect(result).toEqual({
       host: 'my.smtp.host',
       port: 25,
       ignoreTLS: false,
@@ -47,9 +40,9 @@ describe('transports/smtp', () => {
       ignoreTLS: true,
     };
 
-    smtp(options);
+    const result = smtp(options);
 
-    expect(nodemailerSmtpTransport).toHaveBeenCalledWith({
+    expect(result).toEqual({
       host: 'my.smtp.host',
       port: 25,
       ignoreTLS: true,
@@ -64,9 +57,9 @@ describe('transports/smtp', () => {
       secure: false,
     };
 
-    smtp(options);
+    const result = smtp(options);
 
-    expect(nodemailerSmtpTransport).toHaveBeenCalledWith({
+    expect(result).toEqual({
       host: 'my.smtp.host',
       port: 25,
       ignoreTLS: false,
@@ -84,9 +77,9 @@ describe('transports/smtp', () => {
       },
     };
 
-    smtp(options);
+    const result = smtp(options);
 
-    expect(nodemailerSmtpTransport).toHaveBeenCalledWith({
+    expect(result).toEqual({
       host: 'my.smtp.host',
       port: 25,
       ignoreTLS: false,
