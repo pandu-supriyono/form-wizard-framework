@@ -9,6 +9,9 @@
     "lint": "eslint ."
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "devDependencies": {
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.8.0",

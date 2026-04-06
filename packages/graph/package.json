@@ -9,6 +9,9 @@
   },
   "author": "Pandu Supriyono <mail@supriyono.nl>",
   "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "devDependencies": {
     "@form-wizard-framework/eslint-config": "^2.0.0",
     "eslint": "^8.57.0",
