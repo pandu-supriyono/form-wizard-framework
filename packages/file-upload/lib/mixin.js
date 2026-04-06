@@ -6,7 +6,9 @@ function parseLimitBytes(limit) {
   const match = /^(\d+(?:\.\d+)?)\s*(b|kb|mb|gb)?$/i.exec(String(limit));
   if (!match) return 5 * 1024 * 1024;
   const units = { b: 1, kb: 1024, mb: 1048576, gb: 1073741824 };
-  return Math.round(parseFloat(match[1]) * (units[(match[2] || 'b').toLowerCase()] || 1));
+  return Math.round(
+    parseFloat(match[1]) * (units[(match[2] || 'b').toLowerCase()] || 1)
+  );
 }
 
 module.exports = (Controller) =>
@@ -28,7 +30,9 @@ module.exports = (Controller) =>
 
       this.use(
         fileUpload({
-          limits: { fileSize: parseLimitBytes(fileUploadOptions.limit || '5mb') },
+          limits: {
+            fileSize: parseLimitBytes(fileUploadOptions.limit || '5mb'),
+          },
         })
       );
     }
