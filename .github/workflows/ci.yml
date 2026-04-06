@@ -7,29 +7,27 @@ on:
 
 jobs:
   unit-tests:
-    runs-on: ubuntu-22.04
-
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x]
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 24
       - name: Install dependencies
         run: npm ci
       - name: Run tests
         run: npm test
   lint:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
       - name: Install dependencies
         run: npm ci
       - name: Run eslint

@@ -1,8 +1,8 @@
-const busboyBodyParser = require('busboy-body-parser');
+const fileUpload = require('express-fileupload');
 const mixin = require('../../lib/mixin');
 const _ = require('underscore');
 
-jest.mock('busboy-body-parser');
+jest.mock('express-fileupload');
 
 describe('mixin', () => {
   let BaseController, Controller, instance;
@@ -100,19 +100,21 @@ describe('mixin', () => {
       expect(BaseController.prototype.use).toHaveBeenCalled();
     });
 
-    it('should initialize busboyBodyParser with options if provided', () => {
+    it('should initialize fileUpload with options if provided', () => {
       instance.options = options;
       instance.middlewareSetup();
 
-      expect(busboyBodyParser).toHaveBeenCalledWith(options.fileUpload);
+      expect(fileUpload).toHaveBeenCalledWith({
+        limits: { fileSize: 10 * 1048576 },
+      });
     });
 
-    it('should initialize busboyBodyParser with default options if not provided', () => {
+    it('should initialize fileUpload with default options if not provided', () => {
       instance.options = {};
       instance.middlewareSetup();
 
-      expect(busboyBodyParser).toHaveBeenCalledWith({
-        limit: '5mb',
+      expect(fileUpload).toHaveBeenCalledWith({
+        limits: { fileSize: 5 * 1048576 },
       });
     });
   });
