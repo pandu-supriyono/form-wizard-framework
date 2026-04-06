@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     node: true,
-    es2018: true,
+    es2020: true,
   },
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   rules: {

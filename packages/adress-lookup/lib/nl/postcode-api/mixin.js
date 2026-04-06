@@ -125,7 +125,8 @@ module.exports = (Controller) =>
             const extensionKey = fieldName + '-' + EXTENSION_PART_KEY;
             const numberKey = fieldName + '-' + NUMBER_PART_KEY;
 
-            values[numberKey] = values[numberKey] + values[extensionKey];
+            values[numberKey] =
+              String(values[numberKey] ?? '') + (values[extensionKey] ?? '');
 
             delete values[extensionKey];
           }

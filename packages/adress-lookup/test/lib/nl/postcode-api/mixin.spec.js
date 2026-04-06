@@ -316,6 +316,34 @@ describe('Postcode API address lookup mixin', () => {
       });
     });
 
+    it('should not produce NaN when concatenating a number without an extension', () => {
+      BaseController.prototype.getValues = jest
+        .fn()
+        .mockImplementation((req, res, cb) => {
+          cb(null, {
+            address1: {
+              postcode: '2517KC',
+              number: 8, // integer, as returned by the postcode API
+              // no extension key
+            },
+          });
+        });
+
+      req.form.options.addressLookup.concatenateExtension = true;
+
+      return new Promise((resolve, reject) => {
+        instance.getValues(req, res, (err, values) => {
+          if (err) return reject(err);
+          try {
+            expect(values['address1-number']).toBe('8');
+            resolve();
+          } catch (err) {
+            reject(err);
+          }
+        });
+      });
+    });
+
     it('can concatenate the number with extension', () => {
       BaseController.prototype.getValues = jest
         .fn()
